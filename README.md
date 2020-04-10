@@ -2,13 +2,13 @@
 
 This project is totally inspired from virtual kubelet mock provider. With very minimal changes on configuration.
 
-So the main idea behind this project is to simulate virtual kubelet which can hold 100's-1000's of pods in inmemory of the virtual kubelet created. This can allow to create scaled environments specific to Pods.
+So the main idea behind this project is to simulate mock kubelet which can hold 100's-1000's of pods in inmemory of the mock kubelet created. This can allow to create scaled environments specific to Pods.
 
-Running 1000's of pods on the virtual kubelet can help you in benchmarking your controllers and operators. which mainly deal with pods and their events.
+Running 1000's of pods on the mock kubelet can help you in benchmarking your controllers and operators. which mainly deal with deployments, pods and their events.
 
 All you need is to run the below cmd with required configuration details and this will add a new node to your cluster
 
-By default it tries to read KUBECONFIG environment variable to get cluster credentials. If not you can provider KUBECONFIG file with ```--kubeconfig``` flag.
+By default it tries to read ```KUBECONFIG``` environment variable to get cluster credentials. If not you can provider ```KUBECONFIG``` file with ```--kubeconfig``` flag.
 ```yaml
 cd bin
 ./k8s-pods-simulator --provider=mock --provider-config=../config.yaml --nodename=k8s-pods-simulator
