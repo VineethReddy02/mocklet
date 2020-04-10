@@ -1,0 +1,6 @@
+---
+k8s-pods-simulator:
+  cpu: "1000"
+  memory: "500Gi"
+  pods: "10000"
+
