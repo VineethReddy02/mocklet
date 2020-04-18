@@ -7,6 +7,7 @@ import (
 	"io"
 	"io/ioutil"
 	"math/rand"
+	"os"
 	"strings"
 	"time"
 
@@ -97,28 +98,37 @@ func NewMockProvider(providerConfig, nodeName, operatingSystem string, internalI
 
 // loadConfig loads the given json configuration files.
 func loadConfig(providerConfig, nodeName string) (config MockConfig, err error) {
-	data, err := ioutil.ReadFile(providerConfig)
-	if err != nil {
-		return config, err
-	}
-	configMap := map[string]MockConfig{}
-	err = yaml.Unmarshal(data, configMap)
-	if err != nil {
-		return config, err
-	}
-	if _, exist := configMap[nodeName]; exist {
-		config = configMap[nodeName]
-		if config.CPU == "" {
-			config.CPU = defaultCPUCapacity
+	fmt.Println(providerConfig)
+	if providerConfig != "" {
+		data, err := ioutil.ReadFile(providerConfig)
+		if err != nil {
+			return config, err
 		}
-		if config.Memory == "" {
-			config.Memory = defaultMemoryCapacity
+		configMap := map[string]MockConfig{}
+		err = yaml.Unmarshal(data, configMap)
+		if err != nil {
+			return config, err
 		}
-		if config.Pods == "" {
-			config.Pods = defaultPodCapacity
+		if _, exist := configMap[nodeName]; exist {
+			config = configMap[nodeName]
+			if config.CPU == "" {
+				config.CPU = defaultCPUCapacity
+			}
+			if config.Memory == "" {
+				config.Memory = defaultMemoryCapacity
+			}
+			if config.Pods == "" {
+				config.Pods = defaultPodCapacity
+			}
 		}
+	} else {
+		config.Pods = os.Getenv("NUMBER_OF_PODS")
+		config.CPU = os.Getenv("NODE_CPU")
+		config.Memory = os.Getenv("NODE_MEMORY")
 	}
-	fmt.Println(config)
+
+
+	fmt.Printf("Using config as number of pods= %s, node cpu = %s, node memory = %s", config.Pods, config.CPU, config.Memory)
 
 	if _, err = resource.ParseQuantity(config.CPU); err != nil {
 		return config, fmt.Errorf("Invalid CPU value %v", config.CPU)

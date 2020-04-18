@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mock-kubelet
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mock-kubelet
+  labels:
+    app: mock-kubelet
+  namespace: mock-kubelet
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: mock-kubelet
+          image: vineeth97/k8s-pods-simulator
+          ports:
+            - containerPort: 80
+          env:
+            - name: DEFAULT_NODE_NAME
+              value: "mock-kubelet"
+            - name: NODE_CPU
+              value: "200"
+            - name: NODE_MEMORY
+              value: "500Gi"
+            - name: NUMBER_OF_PODS
+              value: "10000"

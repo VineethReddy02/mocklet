@@ -102,6 +102,9 @@ func SetDefaultOpts(c *Opts) error {
 		c.OperatingSystem = DefaultOperatingSystem
 	}
 
+	if c.Provider == "" {
+		c.Provider = "mock"
+	}
 	if c.NodeName == "" {
 		c.NodeName = getEnv("DEFAULT_NODE_NAME", DefaultNodeName)
 	}

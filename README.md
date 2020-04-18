@@ -13,6 +13,12 @@ By default it tries to read ```KUBECONFIG``` environment variable to get cluster
 cd bin
 ./k8s-pods-simulator --provider=mock --provider-config=../config.yaml --nodename=k8s-pods-simulator
 ```
+You can also deploy the mcok-kubelet as deployment in your cluster. This will automatically register the mock-kubelet in the existing cluster.
+
+```cassandraql
+kubectl create -f k8s-deployment.yaml
+```
+
 
 
 **Note:** This project must be only used for scale test to simulate 1000's pods in a mock kubelet.
