@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: mock-kubelet
+  name: mocklet
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mock-kubelet
+  name: mocklet
   labels:
-    app: mock-kubelet
-  namespace: mock-kubelet
+    app: mocklet
+  namespace: mocklet
 spec:
   replicas: 1
   selector:
@@ -21,13 +21,13 @@ spec:
         app: nginx
     spec:
       containers:
-        - name: mock-kubelet
-          image: vineeth97/kubelet-for-scale
+        - name: mocklet
+          image: vineeth97/mocklet
           ports:
             - containerPort: 80
           env:
             - name: DEFAULT_NODE_NAME
-              value: "mock-kubelet"
+              value: "mocklet"
             - name: NODE_CPU
               value: "200"
             - name: NODE_MEMORY

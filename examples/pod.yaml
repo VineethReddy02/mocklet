@@ -10,9 +10,9 @@ spec:
       image: nginx
       imagePullPolicy: IfNotPresent
   tolerations:
-    - key: "k8s-pods-simulator.io/provider"
+    - key: "mocklet.io/provider"
       operator: "Equal"
       value: "mock"
       effect: "NoSchedule"
   nodeSelector:
-    type: k8s-pods-simulator
+    type: mocklet

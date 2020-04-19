@@ -1,4 +1,4 @@
-# kubelet-for-scale
+# mocklet
 
 This project is totally inspired from virtual kubelet mock provider. With very minimal changes on configuration.
 
@@ -11,7 +11,7 @@ All you need is to run the below cmd with required configuration details and thi
 By default it tries to read ```KUBECONFIG``` environment variable to get cluster credentials. If not you can provider ```KUBECONFIG``` file with ```--kubeconfig``` flag.
 ```yaml
 cd bin
-./kubelet-for-scale --provider-config=../config.yaml --nodename=kubelet-for-scale
+./mocklet --provider-config=../config.yaml --nodename=mocklet
 ```
 You can also deploy the mock-kubelet as deployment in your cluster. This will automatically register the mock-kubelet in the existing cluster.
 

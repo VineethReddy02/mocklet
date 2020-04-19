@@ -1,5 +1,5 @@
 ---
-k8s-pods-simulator:
+mocklet:
   cpu: "1000"
   memory: "500Gi"
   pods: "10000"

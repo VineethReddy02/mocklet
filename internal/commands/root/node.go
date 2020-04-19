@@ -1,4 +1,4 @@
-// Copyright © 2017 The k8s-pods-simulator authors
+// Copyright © 2017 The mocklet authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ func NodeFromProvider(ctx context.Context, name string, taint *v1.Taint, p provi
 		ObjectMeta: metav1.ObjectMeta{
 			Name: name,
 			Labels: map[string]string{
-				"type":                   "k8s-pods-simulator",
+				"type":                   "mocklet",
 				"kubernetes.io/role":     "agent",
 				"kubernetes.io/hostname": name,
 			},

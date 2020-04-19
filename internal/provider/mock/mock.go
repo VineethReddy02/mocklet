@@ -42,7 +42,7 @@ var (
 )
 */
 
-// MockProvider implements the k8s-pods-simulator provider interface and stores pods in memory.
+// MockProvider implements the mocklet provider interface and stores pods in memory.
 type MockProvider struct { // nolint:golint
 	nodeName           string
 	operatingSystem    string
@@ -54,7 +54,7 @@ type MockProvider struct { // nolint:golint
 	notifier           func(*v1.Pod)
 }
 
-// MockConfig contains a mock k8s-pods-simulator's configurable parameters.
+// MockConfig contains a mock mocklet's configurable parameters.
 type MockConfig struct { //nolint:golint
 	CPU    string `yaml:"cpu,omitempty"`
 	Memory string `yaml:"memory,omitempty"`

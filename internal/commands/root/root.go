@@ -1,4 +1,4 @@
-// Copyright © 2017 The k8s-pods-simulator authors
+// Copyright © 2017 The mocklet authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ import (
 )
 
 // NewCommand creates a new top-level command.
-// This command is used to start the k8s-pods-simulator daemon
+// This command is used to start the mocklet daemon
 func NewCommand(ctx context.Context, name string, s *provider.Store, c Opts) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   name,

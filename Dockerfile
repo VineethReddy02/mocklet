@@ -6,4 +6,4 @@ COPY bin k8s/
 
 WORKDIR k8s/
 
-CMD ["./kubelet-for-scale"]
+CMD ["./mocklet"]

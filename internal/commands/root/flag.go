@@ -1,4 +1,4 @@
-// Copyright © 2017 The k8s-pods-simulator authors
+// Copyright © 2017 The mocklet authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ func installFlags(flags *pflag.FlagSet, c *Opts) {
 	flags.StringVar(&c.MetricsAddr, "metrics-addr", c.MetricsAddr, "address to listen for metrics/stats requests")
 
 	flags.StringVar(&c.TaintKey, "taint", c.TaintKey, "Set node taint key")
-	flags.BoolVar(&c.DisableTaint, "disable-taint", c.DisableTaint, "disable the k8s-pods-simulator node taint")
+	flags.BoolVar(&c.DisableTaint, "disable-taint", c.DisableTaint, "disable the mocklet node taint")
 	flags.MarkDeprecated("taint", "Taint key should now be configured using the VK_TAINT_KEY environment variable") //nolint:errcheck
 
 	flags.IntVar(&c.PodSyncWorkers, "pod-sync-workers", c.PodSyncWorkers, `set the number of pod synchronization workers`)
@@ -80,7 +80,7 @@ func installFlags(flags *pflag.FlagSet, c *Opts) {
 	flags.StringVar(&c.TraceSampleRate, "trace-sample-rate", c.TraceSampleRate, "set probability of tracing samples")
 
 	flags.DurationVar(&c.InformerResyncPeriod, "full-resync-period", c.InformerResyncPeriod, "how often to perform a full resync of pods between kubernetes and the provider")
-	flags.DurationVar(&c.StartupTimeout, "startup-timeout", c.StartupTimeout, "How long to wait for the k8s-pods-simulator to start")
+	flags.DurationVar(&c.StartupTimeout, "startup-timeout", c.StartupTimeout, "How long to wait for the mocklet to start")
 	flags.DurationVar(&c.StreamIdleTimeout, "stream-idle-timeout", c.StreamIdleTimeout,
 		"stream-idle-timeout is the maximum time a streaming connection can be idle before the connection is"+
 			" automatically closed, default 30s.")

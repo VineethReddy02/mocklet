@@ -1,4 +1,4 @@
-// Copyright © 2017 The k8s-pods-simulator authors
+// Copyright © 2017 The mocklet authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -37,12 +37,12 @@ const (
 	DefaultKubeClusterDomain    = "cluster.local"
 
 	DefaultTaintEffect           = string(corev1.TaintEffectNoSchedule)
-	DefaultTaintKey              = "k8s-pods-simulator.io/provider"
+	DefaultTaintKey              = "mocklet.io/provider"
 	DefaultStreamIdleTimeout     = 30 * time.Second
 	DefaultStreamCreationTimeout = 30 * time.Second
 )
 
-// Opts stores all the options for configuring the root k8s-pods-simulator command.
+// Opts stores all the options for configuring the root mocklet command.
 // It is used for setting flag values.
 //
 // You can set the default options by creating a new `Opts` struct and passing
@@ -52,7 +52,7 @@ type Opts struct {
 	KubeConfigPath string
 	// Namespace to watch for pods and other resources
 	KubeNamespace string
-	// Domain suffix to append to search domains for the pods created by k8s-pods-simulator
+	// Domain suffix to append to search domains for the pods created by mocklet
 	KubeClusterDomain string
 
 	// Sets the port to listen for requests from the Kubernetes API server

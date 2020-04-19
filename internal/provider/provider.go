@@ -10,10 +10,10 @@ import (
 	stats "k8s.io/kubernetes/pkg/kubelet/apis/stats/v1alpha1"
 )
 
-// Provider contains the methods required to implement a k8s-pods-simulator provider.
+// Provider contains the methods required to implement a mocklet provider.
 //
 // Errors produced by these methods should implement an interface from
-// github.com/k8s-pods-simulator/k8s-pods-simulator/errdefs package in order for the
+// github.com/mocklet/mocklet/errdefs package in order for the
 // core logic to be able to understand the type of failure.
 type Provider interface {
 	node.PodLifecycleHandler

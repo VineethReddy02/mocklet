@@ -1,3 +1,3 @@
 #!/bin/bash
 
-go build -o bin/kubelet-for-scale .
+go build -o bin/mocklet .
