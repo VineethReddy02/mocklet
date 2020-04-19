@@ -6,4 +6,4 @@ COPY bin k8s/
 
 WORKDIR k8s/
 
-CMD ["./k8s-pods-simulator"]
+CMD ["./kubelet-for-scale"]

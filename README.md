@@ -1,4 +1,4 @@
-# k8s-pods-simulator
+# kubelet-for-scale
 
 This project is totally inspired from virtual kubelet mock provider. With very minimal changes on configuration.
 
@@ -11,9 +11,9 @@ All you need is to run the below cmd with required configuration details and thi
 By default it tries to read ```KUBECONFIG``` environment variable to get cluster credentials. If not you can provider ```KUBECONFIG``` file with ```--kubeconfig``` flag.
 ```yaml
 cd bin
-./k8s-pods-simulator --provider=mock --provider-config=../config.yaml --nodename=k8s-pods-simulator
+./kubelet-for-scale --provider-config=../config.yaml --nodename=kubelet-for-scale
 ```
-You can also deploy the mcok-kubelet as deployment in your cluster. This will automatically register the mock-kubelet in the existing cluster.
+You can also deploy the mock-kubelet as deployment in your cluster. This will automatically register the mock-kubelet in the existing cluster.
 
 ```cassandraql
 kubectl create -f k8s-deployment.yaml

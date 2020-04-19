@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: mock-kubelet
-          image: vineeth97/k8s-pods-simulator
+          image: vineeth97/kubelet-for-scale
           ports:
             - containerPort: 80
           env:

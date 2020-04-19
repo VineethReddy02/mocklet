@@ -1,3 +1,3 @@
 #!/bin/bash
 
-go build -o bin/k8s-pods-simulator .
+go build -o bin/kubelet-for-scale .
