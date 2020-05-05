@@ -17,6 +17,7 @@ package root
 import (
 	"context"
 	"github.com/VineethReddy02/k8s-simulator/internal/provider"
+	"github.com/VineethReddy02/k8s-simulator/internal/provider/mock"
 	"strings"
 
 	"github.com/virtual-kubelet/virtual-kubelet/errdefs"
@@ -52,8 +53,14 @@ func NodeFromProvider(ctx context.Context, name string, taint *v1.Taint, p provi
 			NodeInfo: v1.NodeSystemInfo{
 				Architecture:   "amd64",
 				KubeletVersion: version,
+				MachineID:      mock.RandStringRunes(5),
 			},
+			Addresses: []v1.NodeAddress{{
+				Type:    "Hostname",
+				Address: name,
+			}},
 		},
+
 	}
 
 	p.ConfigureNode(ctx, node)

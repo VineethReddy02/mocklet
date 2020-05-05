@@ -23,6 +23,7 @@ spec:
       containers:
         - name: mocklet
           image: vineeth97/mocklet
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           env:
