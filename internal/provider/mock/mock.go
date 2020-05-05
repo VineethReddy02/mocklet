@@ -435,7 +435,11 @@ func (p *MockProvider) nodeAddresses() []v1.NodeAddress {
 	return []v1.NodeAddress{
 		{
 			Type:    "InternalIP",
-			Address: p.internalIP,
+			Address:  p.internalIP,
+		},
+		{
+			Type:    "Hostname",
+			Address:  p.nodeName,
 		},
 	}
 }
