@@ -18,7 +18,7 @@ import (
 	"context"
 	"crypto/tls"
 	"fmt"
-	"github.com/VineethReddy02/k8s-simulator/internal/provider"
+	"github.com/VineethReddy02/mocklet/internal/provider"
 	"io"
 	"net"
 	"net/http"

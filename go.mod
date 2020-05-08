@@ -1,4 +1,4 @@
-module github.com/VineethReddy02/k8s-simulator
+module github.com/VineethReddy02/mocklet
 
 go 1.13
 

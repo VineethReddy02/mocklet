@@ -16,10 +16,10 @@ package main
 
 import (
 	"context"
-	"github.com/VineethReddy02/k8s-simulator/internal/commands/providers"
-	"github.com/VineethReddy02/k8s-simulator/internal/commands/root"
-	"github.com/VineethReddy02/k8s-simulator/internal/commands/version"
-	"github.com/VineethReddy02/k8s-simulator/internal/provider"
+	"github.com/VineethReddy02/mocklet/internal/commands/providers"
+	"github.com/VineethReddy02/mocklet/internal/commands/root"
+	"github.com/VineethReddy02/mocklet/internal/commands/version"
+	"github.com/VineethReddy02/mocklet/internal/provider"
 	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
 	"os"
 	"os/signal"

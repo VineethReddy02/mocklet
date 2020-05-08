@@ -16,8 +16,8 @@ package root
 
 import (
 	"context"
-	"github.com/VineethReddy02/k8s-simulator/internal/provider"
-	"github.com/VineethReddy02/k8s-simulator/internal/provider/mock"
+	"github.com/VineethReddy02/mocklet/internal/provider"
+	"github.com/VineethReddy02/mocklet/internal/provider/mock"
 	"strings"
 
 	"github.com/virtual-kubelet/virtual-kubelet/errdefs"

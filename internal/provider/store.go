@@ -1,7 +1,7 @@
 package provider
 
 import (
-	"github.com/VineethReddy02/k8s-simulator/manager"
+	"github.com/VineethReddy02/mocklet/manager"
 	"sync"
 
 	"github.com/virtual-kubelet/virtual-kubelet/errdefs"
