@@ -53,7 +53,7 @@ func NewCommand(ctx context.Context, name string, s *provider.Store, c Opts) *co
 backend implementation allowing users to create kubernetes nodes without running the kubelet.
 This allows users to schedule kubernetes workloads on nodes that aren't running Kubernetes.`,
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return runRootCommand(ctx, s, c)
+			return RunRootCommand(ctx, s, c)
 		},
 	}
 
@@ -61,7 +61,7 @@ This allows users to schedule kubernetes workloads on nodes that aren't running 
 	return cmd
 }
 
-func runRootCommand(ctx context.Context, s *provider.Store, c Opts) error {
+func RunRootCommand(ctx context.Context, s *provider.Store, c Opts) error {
 	ctx, cancel := context.WithCancel(ctx)
 	defer cancel()
 
