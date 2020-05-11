@@ -3,6 +3,35 @@ kind: Namespace
 metadata:
   name: mocklet
 ---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: mocklet
+  namespace: mocklet
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: mocklet
+rules:
+  - apiGroups: ["*"]
+    resources: ["*"]
+    verbs: ["*"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: mocklet
+  namespace: mocklet
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: mocklet
+subjects:
+  - kind: ServiceAccount
+    name: mocklet
+    namespace: mocklet
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,6 +49,7 @@ spec:
       labels:
         app: mocklet
     spec:
+      serviceAccountName: mocklet
       containers:
         - name: mocklet
           image: vineeth97/mocklet
