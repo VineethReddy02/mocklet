@@ -58,7 +58,9 @@ spec:
             - containerPort: 80
           env:
             - name: DEFAULT_NODE_NAME
-              value: "mocklet"
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
             - name: NODE_CPU
               value: "200"
             - name: NODE_MEMORY
