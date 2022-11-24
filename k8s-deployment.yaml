@@ -59,7 +59,7 @@ spec:
           env:
             - name: DEFAULT_NODE_NAME
               valueFrom:
-                fieldFrom:
+                fieldRef:
                   fieldPath: metadata.name
             - name: NODE_CPU
               value: "200"
