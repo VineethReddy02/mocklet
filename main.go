@@ -16,16 +16,17 @@ package main
 
 import (
 	"context"
-	"github.com/VineethReddy02/mocklet/internal/commands/providers"
-	"github.com/VineethReddy02/mocklet/internal/commands/root"
-	"github.com/VineethReddy02/mocklet/internal/commands/version"
-	"github.com/VineethReddy02/mocklet/internal/provider"
-	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
 	"os"
 	"os/signal"
 	"path/filepath"
 	"strings"
 	"syscall"
+
+	"github.com/VineethReddy02/mocklet/internal/commands/providers"
+	"github.com/VineethReddy02/mocklet/internal/commands/root"
+	"github.com/VineethReddy02/mocklet/internal/commands/version"
+	"github.com/VineethReddy02/mocklet/internal/provider"
+	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
 
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
@@ -40,7 +41,7 @@ import (
 var (
 	buildVersion = "N/A"
 	buildTime    = "N/A"
-	k8sVersion   = "v1.15.2" // This should follow the version of k8s.io/kubernetes we are importing
+	k8sVersion   = "v1.16.15" // This should follow the version of k8s.io/kubernetes we are importing
 )
 
 func main() {
